@@ -289,7 +289,7 @@ The Silver layer focuses on cleaning, deduplicating, and transforming the raw da
    ```sql
    CREATE OR REPLACE DYNAMIC TABLE clean_flatten_aqi_dt
       TARGET_LAG = '120 minutes'
-      WAREHOUSE = transform_wh
+      WAREHOUSE = compute_wh
    AS
    WITH avg_pollutants_transposed AS (
       SELECT 
@@ -367,7 +367,7 @@ The Gold Layer represents the final stage of the data pipeline where data is tra
    -- Final Wide Table 
    CREATE OR REPLACE DYNAMIC TABLE aqi_final_wide_dt
       TARGET_LAG = '120 MINUTES'
-      WAREHOUSE = transform_wh
+      WAREHOUSE = compute_wh
    AS
    SELECT 
       index_record_ts, 
@@ -434,7 +434,8 @@ Combines data from:
 
 
 ### Data Validation
-TODO
+After developing an end to end pipeline, You are supposed to validate whether the pipeline is returning expected output or not.
+I 've tested for a couple of data files and worked as expected.
 
 ### Enhancements
-TODO
+- I 've manually uploaded the data files from local machine to Internal Stage. You may automate this process by integrating tools like Apache Airflow, or Snowpark that will fetch the data from the source API and upload to the internl stage.
