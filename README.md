@@ -5,7 +5,7 @@
 Assuming, A city’s environmental agency wants to provide residents with an **Interactive dashboard** that displays real-time and historical **Air Quality Index (AQI)** trends. The data will help citizens make informed decisions about outdoor activities, especially in areas prone to high pollution levels.
 
 ## Objective
-Build a `data solution` that fetches AQI data from a public API, cleans and transforms, and loads it into a database or warehouse that serves as the source for reporting (dashboard).
+Build a `data solution` that fetches AQI data from a public API, clean and transform, and load it into a database or warehouse that serves as the source for reporting (dashboard).
 
 ## Prerequisites
   - Snowfalke Account (Free Edition is enough)
